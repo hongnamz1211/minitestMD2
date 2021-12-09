@@ -1,5 +1,6 @@
 package com.company;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class Main {
@@ -12,7 +13,8 @@ public class Main {
         int size = scanner.nextInt();
         products = new Product[size];
         for (int i = 0; i < products.length; i++) {
-            products[i] = inputProduct(scanner);
+            Product product = inputProduct(scanner);
+            products[i] = product;
         }
 
         for (Product i : products) {
@@ -24,6 +26,8 @@ public class Main {
         findPro(scanner, products);
 
         changePro(scanner, products);
+
+        delPro(scanner, products);
     }
 
     public static Product inputProduct(Scanner scanner) {
@@ -61,6 +65,16 @@ public class Main {
             }
         }
     }
+    public static void delPro(Scanner scanner, Product[] products) {
+        System.out.print("Nhập id sản phẩm muốn xóa: ");
+        int id = scanner.nextInt();
+        for (int i = 0; i < products.length; i++) {
+            while (id == products[i].getId()) {
+                System.arraycopy(products, i + 1, products, i, products.length - 1 - i);
+            }
+        }
+        System.out.print(Arrays.toString(products));
+    }
 
     public static void changePro(Scanner scanner, Product[] products) {
         System.out.print("Nhập id sản phẩm cần sửa: ");
@@ -82,4 +96,5 @@ public class Main {
             }
         }
     }
+
 }
