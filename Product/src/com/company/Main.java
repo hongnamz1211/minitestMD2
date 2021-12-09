@@ -12,13 +12,18 @@ public class Main {
         int size = scanner.nextInt();
         products = new Product[size];
         for (int i = 0; i < products.length; i++) {
-                products[i] = inputProduct(scanner);
+            products[i] = inputProduct(scanner);
         }
-//        String nameProduct = scanner.nextLine();
-//        int count = 0;
-//        for (int i = 0; i < products.length; i++) {
-//            if (products[i].ge
-//        }
+
+        for (Product i : products) {
+            System.out.println(i);
+        }
+
+        sum(products);
+
+        findPro(scanner, products);
+
+        changePro(scanner, products);
     }
 
     public static Product inputProduct(Scanner scanner) {
@@ -37,6 +42,44 @@ public class Main {
         return new Product(id, name, price, type, moneyType);
     }
 
+    public static double sum(Product[] products) {
+        double sumPri = 0;
+        for (int i = 0; i < products.length; i++) {
+            sumPri += products[i].getPrice();
+        }
+        System.out.println("Tổng giá các sản phẩm: " + sumPri);
+        return sumPri;
+    }
 
+    public static void findPro(Scanner scanner, Product[] products) {
+        System.out.print("Nhập tên sản phẩm muốn tìm: ");
+        String inputName = scanner.nextLine();
+        for (int i = 0; i < products.length; i++) {
+            if (inputName == products[i].getName()) {
+                System.out.println(products[i]);
+                break;
+            }
+        }
+    }
 
+    public static void changePro(Scanner scanner, Product[] products) {
+        System.out.print("Nhập id sản phẩm cần sửa: ");
+        int id = scanner.nextInt();
+        for (int i = 0; i < products.length; i++) {
+            if (id == products[i].getId()) {
+                System.out.print("id: " + id);
+                scanner.nextLine();
+                System.out.print("\n" + "Nhập tên: ");
+                products[i].setName(scanner.nextLine());
+                System.out.print("Nhập giá: ");
+                products[i].setPrice(scanner.nextDouble());
+                System.out.print("Nhập loại: ");
+                scanner.nextLine();
+                products[i].setType(scanner.nextLine());
+                System.out.println("Nhập loại tiền: ");
+                scanner.nextLine();
+                products[i].setMoneyType(scanner.nextLine());
+            }
+        }
+    }
 }
