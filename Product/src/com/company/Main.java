@@ -7,20 +7,18 @@ public class Main {
     public static void main(String[] args) {
         // write your code here
         Scanner scanner = new Scanner(System.in);
-        Product[][] products;
+        Product[] products;
         System.out.print("Nhập số lượng sản phẩm: ");
         int size = scanner.nextInt();
-        products = new Product[size][5];
+        products = new Product[size];
         for (int i = 0; i < products.length; i++) {
-            for (int j = 0; j < products[i].length; j++) {
-                products[i][j] = inputProduct(scanner);
-            }
+                products[i] = inputProduct(scanner);
         }
-        String nameProduct = scanner.nextLine();
-        int count = 0;
-        for (int i = 0; i < products.length; i++) {
-            if (products[i].)
-        }
+//        String nameProduct = scanner.nextLine();
+//        int count = 0;
+//        for (int i = 0; i < products.length; i++) {
+//            if (products[i].ge
+//        }
     }
 
     public static Product inputProduct(Scanner scanner) {
