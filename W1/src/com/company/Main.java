@@ -16,9 +16,12 @@ public class Main {
             Product product = inputProduct(scanner);
             products[i] = product;
         }
-
-        for (Product i : products) {
-            System.out.println(i);
+//        System.out.println(Arrays.toString(products));
+//        for (Product i : products) {
+//            System.out.println(i);
+//        }
+        for (int i = 0; i < products.length; i++) {
+            System.out.println(products[i].toString());
         }
 
         sum(products);
