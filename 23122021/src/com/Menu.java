@@ -1,5 +1,6 @@
 package com;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Menu {
@@ -50,7 +51,8 @@ public class Menu {
                     break;
                 case 6:
                     System.out.println("Sinh viên có điểm trung bình cao nhất");
-                    manager.pointAvg();
+                    ArrayList<Student> students = manager.pointHightAvg();
+                    System.out.println(students);
                     break;
                 case 7:
                     System.out.println("Danh sách sắp xếp theo điểm trung bình");

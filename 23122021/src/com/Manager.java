@@ -113,18 +113,36 @@ public class Manager {
         }
     }
 
-    public void pointAvg() {
-        Student student = null;
+//    public void pointAvg() {
+//        Student student = null;
+//        double hightPointAvg = 0;
+//        for (Student s :
+//                students) {
+//            if (s.pointAvg() > hightPointAvg) {
+//                student = s;
+//            }
+//        }
+//        if (student != null) {
+//            System.out.println(student);
+//        }
+//    }
+
+    public ArrayList<Student> pointHightAvg() {
+        ArrayList<Student> studentHightAvg = new ArrayList<>();
         double hightPointAvg = 0;
         for (Student s :
                 students) {
             if (s.pointAvg() > hightPointAvg) {
-                student = s;
+                hightPointAvg = s.pointAvg();
             }
         }
-        if (student != null) {
-            System.out.println(student);
+        for (Student s :
+                students) {
+            if (s.pointAvg() == hightPointAvg) {
+                studentHightAvg.add(s);
+            }
         }
+        return studentHightAvg;
     }
 
     public void studentSort() {

@@ -40,7 +40,7 @@ public class Human {
 
     @Override
     public String toString() {
-        return "Student[" +
+        return "\nStudent[" +
                 "id=" + id +
                 ", name='" + name + '\'' +
                 ", age=" + age;
